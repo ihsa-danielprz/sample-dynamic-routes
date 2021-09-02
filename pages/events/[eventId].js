@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { Fragment } from 'react'
 
 import { getFeaturedEvents, getEventById } from '../../helpers/api-util'
@@ -17,6 +19,10 @@ const EventDetail = ({ selectedEvent }) => {
 
   return (
     <Fragment>
+      <Head>
+        <title>{selectedEvent.title}</title>
+        <meta name="description" content={selectedEvent.description} />
+      </Head>
       <EventSummary title={selectedEvent.title} />
       <EventLogistics
         date={selectedEvent.date}

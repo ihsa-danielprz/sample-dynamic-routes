@@ -1,5 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
-import Link from 'next/link'
+import Image from 'next/image'
 
 import classes from './EventItem.module.css'
 import DateIcon from '../icons/DateIcon'
@@ -18,7 +17,8 @@ const EventItem = ({ item }) => {
 
   return (
     <li className={classes.item}>
-      <img src={`/${item.image}`} alt={item.title} />
+      <Image src={`/${item.image}`} alt={item.title} width={250} height={140} />
+      {/* <img src={`/${item.image}`} alt={item.title} /> */}
       <div className={classes.content}>
         <div className={classes.sumary}>
           <h2>{item.title}</h2>
